@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Multi-Education Website</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=account_balance_wallet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=graphic_eq" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=monitoring" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add" />
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      />
+</head>
+
+<body>
+    <nav>
+        <div class="container nav__container">
+            <a href="index.html">
+                <h4>EGATOR</h4>
+            </a>
+            <ul class="nav__menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="course.html">Courses</a></li>
+                <li><a href="payment.html" aria-current="page">Payment</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+                
+            </ul>
+            <button id="open-menu-btn" aria-label="Open Menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <button class="close-btn" aria-label="Close Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path
+                        d="M13.41,12l6.3-6.29a1,1,0,0,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,1,0,1.42,1.42L12,13.41l6.29,6.3a1,1,0,1,0,1.42-1.42Z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container header__container">
+            <div class="header__left">
+                <h1>Grow Your Skills to Advance in Your Career</h1>
+                <p>
+                    Continuous learning is essential for career growth. Identify areas
+                    for development and stay ahead by updating your skills regularly.
+                </p>
+                <a href="course.html" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="header__right">
+                <img src="./images/header.svg" alt="Educational Illustration" class="right-image" />
+            </div>
+        </div>
+    </header>
+
+    <section class="categories">
+        <div class="categories categories__container">
+            <div class="categories-left">
+                <h1>Categories</h1>
+                <p>Various Courses to enhance your Career</p>
+                <a href="#" class="btn">Learn more</a>
+            </div>
+            <div class="categories-right">
+                <article class="category">
+
+                    <h5>Blockchain</h5>
+                    <p>
+                        Blockchain is a revolutionary, decentralized technology that
+                        records transactions across a network of computers. Known for its
+                        transparency, security, and immutability, blockchain forms the
+                        backbone of cryptocurrencies and is now expanding into industries
+                        like finance, healthcare, and supply chain management
+                    </p>
+                </article>
+                <article class="category">
+
+                    <h5>Finance</h5>
+                    <p>
+                        Master the Art of Managing Money and Investments Finance is the
+                        backbone of any economy, focusing on the management of money,
+                        investments, and financial systems. From personal budgeting to
+                        corporate finance and global markets, finance plays a critical
+                        role in decision-making processes at every level.
+                    </p>
+                </article>
+                <article class="category">
+
+                    <h5>Graphic Desighn</h5>
+                    <p>
+                        Graphic design is the art of combining visual elements to
+                        communicate ideas and solve problems creatively.
+                    </p>
+                </article>
+                <article class="category">
+
+                    <h5>Marketing</h5>
+                    <p>
+                        Master the Art of Influencing and Engaging Audiences Marketing is
+                        the strategy and science behind promoting products, services, or
+                        ideas to the right audience at the right time. In today’s digital
+                        age, marketing plays a crucial role in brand building, customer
+                        acquisition, and business growth. With the right marketing
+                        knowledge, you can create compelling campaigns that drive
+                        engagement and deliver measurable results.
+                    </p>
+                </article>
+                <article class="category">
+
+                    <h5>Blockchain</h5>
+                    <p>
+                        Blockchain is a revolutionary, decentralized technology that
+                        records transactions across a network of computers. Known for its
+                        transparency, security, and immutability, blockchain forms the
+                        backbone of cryptocurrencies and is now expanding into industries
+                        like finance, healthcare, and supply chain management
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="courses">
+        <h2> Popular Courses</h2>
+        <div class="container courses__container">
+
+            <article class="course">
+                <div class="course_image">
+                    <img src="./images/course1.jpg">
+                </div>
+                <div class="course__info">
+                    <h4>Responsive Social Media Website UI Desighn</h4>
+                    <p>Learn how to build a responsive website using Html,Css,JavaScript </p>
+                    <a href="course.html" class="btn btn-primary">Learn More </a>
+                </div>
+            </article>
+
+            <article class="course">
+                <div class="course_image">
+                    <img src="./images/course2.jpg">
+                </div>
+                <div class="course__info">
+                    <h4>Responsive Smart Home Website</h4>
+                    <p>Learn how to build a responsive website using React and Angular js </p>
+                    <a href="course.html" class="btn btn-primary">Learn More </a>
+                </div>
+            </article>
+
+            <article class="course">
+                <div class="course_image">
+                    <img src="./images/course3.jpg">
+                </div>
+                <div class="course__info">
+                    <h4>Responsive Admin Dashboard App</h4>
+                    <p>Learn how to build a responsive android app using the kotlin </p>
+                    <a href="course.html" class="btn btn-primary">Learn More </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <section class="freqs">
+        <h2>Frequently asked questions</h2>
+        <div class="container faqs_container">
+            <article class="freq open">
+                <div class="freq_icon"><span class="material-symbols-outlined">
+                        add
+                    </span></div>
+                <div class="question__answer">
+                    <h4>How do i know right courses for me?</h4>
+                    <p>You can go to course section and choose the courses according to your choice</p>
+                </div>
+            </article>
+
+            <article class="freq ">
+                <div class="freq_icon"><span class="material-symbols-outlined">
+                        add
+                    </span></div>
+                <div class="question__answer">
+                    <h4>What is the price of your courses</h4>
+                    <p>The prices are dynamic and according to your choices</p>
+                </div>
+            </article>
+
+            <article class="freq">
+                <div class="freq_icon"><span class="material-symbols-outlined">
+                        add
+                    </span></div>
+                <div class="question__answer">
+                    <h4>Can I learn at my own pace?</h4>
+                    <p>Yes you can learn it on your own pace</p>
+                </div>
+            </article>
+
+            <article class="freq">
+                <div class="freq_icon"><span class="material-symbols-outlined">
+                        add
+                    </span></div>
+                <div class="question__answer">
+                    <h4>Are your courses suitable for beginners?</h4>
+                    <p>Yes, we offer beginner, intermediate, and advanced level courses to cater to all learners</p>
+                </div>
+            </article>
+
+            <article class="freq">
+                <div class="freq_icon"><span class="material-symbols-outlined">
+                        add
+                    </span></div>
+                <div class="question__answer">
+                    <h4>Do I get a certificate after completing a course?</h4>
+                    <p>Yes you can get the certificate for it</p>
+                </div>
+            </article>
+
+            <article class="freq">
+                <div class="freq_icon"><span class="material-symbols-outlined">
+                        add
+                    </span></div>
+                <div class="question__answer">
+                    <h4>What is the duration of each course?</h4>
+                    <p>Course durations vary, ranging from a few hours to several weeks, depending on the content and
+                        depth.</p>
+                </div>
+            </article>
+
+            <article class="freq">
+                <div class="freq_icon"><span class="material-symbols-outlined">
+                        add
+                    </span></div>
+                <div class="question__answer">
+                    <h4>Can I access the course material after completion?</h4>
+                    <p>Yes, once enrolled, you will have lifetime access to the course content.</p>
+                </div>
+            </article>
+
+            <article class="freq">
+                <div class="freq_icon"><span class="material-symbols-outlined">
+                        add
+                    </span></div>
+                <div class="question__answer">
+                    <h4>What are the payment options available?</h4>
+                    <p>We accept credit/debit cards, UPI, PayPal, and other online payment methods.</p>
+                </div>
+            </article>
+
+            <article class="freq">
+                <div class="freq_icon"><span class="material-symbols-outlined">
+                        add
+                    </span></div>
+                <div class="question__answer">
+                    <h4>Is there any refund policy?</h4>
+                    <p>Yes we have the refund policy</p>
+                </div>
+            </article>
+
+            <article class="freq">
+                <div class="freq_icon"><span class="material-symbols-outlined">
+                        add
+                    </span></div>
+                <div class="question__answer">
+                    <h4>Are there any prerequisites for the courses?</h4>
+                    <p>Some advanced courses may require prior knowledge, which will be mentioned in the course details.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section class="container testomonial_continer  mySwiper">
+        <h2> Student Testimonial</h2>
+        <div class="swiper-wrapper">
+            <artice class="testimonial swiper-slide">
+                <div class="avtaar">
+                    <img src="./images/avatar1.jpg">
+                </div>
+                <div class="testimonial_Info">
+                    <h5>Yashika Bindra</h5>
+                    <small>Student</small>
+
+                </div>
+                <div class="testimonial_body">
+                    The faculty is very knowledgeable, and the course curriculum is well-structured. However, the
+                    infrastructure could use some improvement, especially the library facilities. Overall, it was a
+                    great learning experience.
+                </div>
+            </artice>
+            <artice class="testimonial swiper-slide">
+                <div class="avtaar">
+                    <img src="./images/avatar3.jpg">
+                </div>
+                <div class="testimonial_Info">
+                    <h5>Aatif Raza</h5>
+                    <small>Student</small>
+
+                </div>
+                <div class="testimonial_body">
+                    The faculty has a good and experienced teacher and provide us with the valuable Knowledge.
+                </div>
+            </artice>
+            <article class="testimonial swiper-slide">
+                <div class="avtaar">
+                    <img src="./images//avatar4.jpg">
+                </div>
+                <div class="testimonial_Info">
+                    <h5>Raima Naaz</h5>
+                    <small>Student</small>
+
+                </div>
+                <div class="testimonial_body">
+                    The curriculum is decent, but some subjects feel outdated. Faculty members are helpful but not
+                    always available outside of class hours. The hostel facilities need improvement, especially in terms
+                    of hygiene. However, the sports infrastructure is excellent, which makes up for a lot
+                </div>
+            </article>
+            <article class="testimonial swiper-slide">
+                <div class="avtaar">
+                    <img src="./images//avatar2.jpg">
+                </div>
+                <div class="testimonial_Info">
+                    <h5>Sam</h5>
+                    <small>Student</small>
+
+                </div>
+                <div class="testimonial_body">
+                    The learning environment is excellent, with supportive faculty and hands-on projects. The placement
+                    cell actively helps students secure internships. However, the cafeteria menu lacks variety, and
+                    campus events could be more engaging.
+                </div>
+            </article>
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+
+
+    <footer>
+        <div class="container footer__container">
+          <div class="footer_1">
+            <a href="index.html" class="footer-logo"><h4>Egator</h4></a>
+            <p>Your learning platform for personal growth.</p>
+          </div>
+          <div class="footer_2">
+            <h4>Permalinks</h4>
+            <ul class="permalinks">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="course.html">Courses</a></li>
+            </ul>
+          </div>
+          <div class="footer_3">
+            <h4>Privacy</h4>
+            <ul class="privacy">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Refunds</a></li>
+            </ul>
+          </div>
+          <div class="footer_4">
+            <h4>Contact Us</h4>
+            <div class="contact_info">
+              <p>9835861594</p>
+              <p>aatifr2003@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+          var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints:{
+            600:{
+                slidesPerView: 2,
+                spaceBetween: 30,
+            }
+    
+      }
+    });
+    </script>
+</body>
+
+</html>

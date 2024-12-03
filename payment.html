@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #6c63ff ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .payment-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .payment-icons img {
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .payment-icons img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        .btn-primary {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #45a049;
+        }
+
+        #payment-status {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 140px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px 0;
+            position: absolute;
+            bottom: 125%; /* Position the tooltip above the icon */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        @media (max-width: 500px) {
+            .payment-icons img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="payment-container">
+        <h2>Complete Your Payment</h2>
+
+        <!-- Payment Icons with Tooltips -->
+        <div class="payment-icons">
+            <div class="tooltip">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" 
+                     alt="PayPal" />
+                <span class="tooltip-text">Pay with PayPal</span>
+            </div>
+        
+            <div class="tooltip">
+                <img src="./images//google-pay-icon.svg" 
+                     alt="Google Pay" />
+                <span class="tooltip-text">Pay with Google Pay</span>
+            </div>
+        
+            <div class="tooltip">
+                <img src="./images//razorpay-icon.svg" 
+                     alt="Razorpay" />
+                <span class="tooltip-text">Pay with Razorpay</span>
+            </div>
+        </div>
+        
+
+        <!-- Payment Form -->
+        <form id="payment-form">
+            <input type="text" id="userId" name="userId" placeholder="Enter User ID" required />
+            <input type="text" id="courseId" name="courseId" placeholder="Enter Course ID" required />
+            <button type="submit" class="btn-primary">Pay Now</button>
+        </form>
+
+        <div id="payment-status"></div>
+    </div>
+
+    <script>
+        const paymentForm = document.getElementById('payment-form');
+        const paymentStatusDiv = document.getElementById('payment-status');
+
+        paymentForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const userId = document.getElementById('userId').value;
+            const courseId = document.getElementById('courseId').value;
+
+            try {
+                // Send payment request to the backend
+                const response = await fetch('http://localhost:5000/api/payment', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userId: userId,
+                        courseId: courseId,
+                        isPaid: true,
+                    }),
+                });
+
+                if (response.ok) {
+                    // Check payment status
+                    const statusResponse = await fetch(
+                        `http://localhost:5000/api/payment/${userId}/${courseId}`
+                    );
+                    const statusData = await statusResponse.json();
+
+                    if (statusData.isPaid) {
+                        paymentStatusDiv.innerHTML = `<p style="color: green;">Payment Successful! 🎉</p>`;
+                    } else {
+                        paymentStatusDiv.innerHTML = `<p style="color: red;">Payment Failed. Please try again.</p>`;
+                    }
+                } else {
+                    paymentStatusDiv.innerHTML = `<p style="color: red;">Error processing payment.</p>`;
+                }
+            } catch (error) {
+                paymentStatusDiv.innerHTML = `<p style="color: red;">Something went wrong. Please try again later.</p>`;
+                console.error('Error:', error);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
