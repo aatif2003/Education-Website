@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Responsive Multi-Education Website</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" />
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container nav__container">
+            <a href="index.html" class="logo">
+                <h4>EGATOR</h4>
+            </a>
+            <ul class="nav__menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <button id="open-menu-btn" aria-label="Open Menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <button id="close-menu-btn" aria-label="Close Menu" class="close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M13.41,12l6.3-6.29a1,1,0,0,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,1,0,1.42,1.42L12,13.41l6.29,6.3a1,1,0,1,0,1.42-1.42Z"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login">
+        <div class="login__container">
+            <h2>Login to Your Account</h2>
+            <form class="login__form" action="#" method="POST">
+                <div class="form__control">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form__control">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p class="login__footer-text">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer__container">
+            <div class="footer_1">
+                <a href="index.html" class="footer-logo">
+                    <h4>Egator</h4>
+                </a>
+                <p>Your learning platform for personal growth.</p>
+            </div>
+            <div class="footer_2">
+                <h4>Permalinks</h4>
+                <ul class="permalinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                </ul>
+            </div>
+            <div class="footer_3">
+                <h4>Privacy</h4>
+                <ul class="privacy">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Refunds</a></li>
+                </ul>
+            </div>
+            <div class="footer_4">
+                <h4>Contact Us</h4>
+                <div class="contact_info">
+                    <p>9835861594</p>
+                    <p>aatifr2003@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script>
+        // Menu Toggle Logic
+        const openMenuBtn = document.getElementById('open-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        openMenuBtn.addEventListener('click', () => {
+            navMenu.classList.add('active');
+            openMenuBtn.setAttribute('aria-expanded', 'true');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            openMenuBtn.setAttribute('aria-expanded', 'false');
+        });
+    </script>
+</body>
+
+</html>
